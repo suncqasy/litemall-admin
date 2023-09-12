@@ -3,7 +3,7 @@ import store from '@/store'
 /**
  * 字符权限校验
  * @param {Array} value 校验值
- * @returns {Boolean}
+ * @returns {Boolean} dd 
  */
 export function checkPermi(value) {
   if (value && value instanceof Array && value.length > 0) {
