@@ -378,8 +378,31 @@ export const asyncRoutes = [
         component: () => import('@/views/message/list'),
         name: 'messageList',
         meta: {
-          perms: ['GET /admin/message/list'],
+          perms: ['GET /admin/message/listByReceive'],
           title: '用户聊天信息',
+          noCache: true
+        }
+      },
+
+
+      {
+        path: 'knowledge',
+        component: () => import('@/views/aigcKnowledge/list'),
+        name: 'knowledgeList',
+        meta: {
+          perms: ['GET /admin/knowledge/list'],
+          title: '问答知识库',
+          noCache: true
+        }
+      },
+
+      {
+        path: 'aigcSearch',
+        component: () => import('@/views/aigcSearch/list'),
+        name: 'aigcSearch',
+        meta: {
+          perms: ['GET /admin/aigcSearch/list'],
+          title: '搜索知识库',
           noCache: true
         }
       },

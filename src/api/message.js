@@ -2,27 +2,14 @@ import request from '@/utils/request'
 
 export function listMessage(query) {
   return request({
-    url: '/message/list',
+    url: '/message/listByReceive',
     method: 'get',
     params: query
   })
 }
 
-export function deleteMessage(id) {
-  return request({
-    url: '/message/delete',
-    method: 'post',
-    params: { id }
-  })
-}
 
-export function publishMessage(data) {
-  return request({
-    url: '/message/create',
-    method: 'post',
-    data
-  })
-}
+
 
 export function detailMessage(id) {
   return request({
@@ -32,9 +19,21 @@ export function detailMessage(id) {
   })
 }
 
-export function editMessage(data) {
+
+
+// 查询历史聊天记录
+export function readByReceive(data) {
   return request({
-    url: '/message/update',
+    url: '/message/readByReceive',
+    method: 'post',
+    data
+  })
+}
+
+// 批量导出message
+export function batchDownloadMessage(data) {
+  return request({
+    url: '/message/batchDownloadMessage',
     method: 'post',
     data
   })
